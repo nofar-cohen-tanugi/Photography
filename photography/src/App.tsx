@@ -1,4 +1,3 @@
-// Importing functional components (make sure they are functional components)
 import { HomePage } from './pages/HomePage';
 import { ContactPage } from './pages/ContactPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
