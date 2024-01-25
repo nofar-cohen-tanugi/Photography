@@ -36,7 +36,7 @@ export const Header = () => {
     },
     {
       label: t('contact'),
-      url: '/contact',
+      url: '/gallery',
       className:
         'font-medium	text-lg text-white hover:bg-transparent hover:text-orange-400',
     },
