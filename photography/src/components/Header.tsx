@@ -49,7 +49,7 @@ export const Header = () => {
   return (
     <div className='card'>
       <Menubar
-        className='p-0 border-0 border-b-4 border-stone-100 bg-transparent flex items-center'
+        className='p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
         style={{ padding: '0.1rem 0.5rem 0.1rem 0.5rem' }}
         model={items}
         start={startContent}
