@@ -16,8 +16,8 @@ const App = () => {
         <div className='circle large shade3'></div>
         <div className='circle mediun shade4'></div>
         <div className='circle small shade5'></div>
-        <Header />
         <Router>
+          <Header />
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/about' element={<ContactPage />} />
