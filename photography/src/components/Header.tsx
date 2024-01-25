@@ -1,21 +1,25 @@
 import React from 'react';
-import photoLogo from '../assets/images/photoLogo.png';
+import photoLogo from '../assets/images/photoLogo.jpeg';
 import { Image } from 'primereact/image';
 import { useTranslation } from 'react-i18next';
 import { Menubar } from 'primereact/menubar';
 import { MenuItem } from 'primereact/menuitem';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   const { t } = useTranslation(['header']);
 
   const startContent = (
     <React.Fragment>
-      <Image
-        src={photoLogo}
-        alt='Logo'
-        width='40'
-        style={{ margin: '0 0.5rem 0 0.5rem' }}
-      />
+      <Link to='/'>
+        <Image
+          src={photoLogo}
+          alt='Logo'
+          width='50'
+          height='100%'
+          style={{ margin: '0.4rem 0.5rem 0 0.5rem', cursor: 'pointer' }}
+        />
+      </Link>
     </React.Fragment>
   );
 
@@ -36,7 +40,7 @@ export const Header = () => {
     },
     {
       label: t('contact'),
-      url: '/contact',
+      url: '/gallery',
       className:
         'font-medium	text-lg text-white hover:bg-transparent hover:text-orange-400',
     },
@@ -45,7 +49,7 @@ export const Header = () => {
   return (
     <div className='card'>
       <Menubar
-        className='p-0 border-0 border-b-4 border-stone-100 bg-transparent'
+        className='p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
         style={{ padding: '0.1rem 0.5rem 0.1rem 0.5rem' }}
         model={items}
         start={startContent}
