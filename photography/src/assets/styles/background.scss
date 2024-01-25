@@ -1,0 +1,65 @@
+body {
+    background: #3f3f3f;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 0px 1px 0px #508fb9;
+}
+
+.small {
+    width: 200px;
+    height: 200px;
+    left: -100px;
+    bottom: -100px;
+}
+
+.medium {
+    width: 400px;
+    height: 400px;
+    left: -200px;
+    bottom: -200px;
+}
+
+.large {
+    width: 600px;
+    height: 600px;
+    left: -300px;
+    bottom: -300px;
+}
+
+.xlarge {
+    width: 800px;
+    height: 800px;
+    left: -400px;
+    bottom: -400px;
+}
+
+.xxlarge {
+    width: 1000px;
+    height: 1000px;
+    left: -500px;
+    bottom: -500px;
+}
+
+.shade1 {
+    opacity: 0.05;
+}
+
+.shade2 {
+    opacity: 0.06;
+}
+
+.shade3 {
+    opacity: 0.07;
+}
+
+.shade4 {
+    opacity: 0.08;
+}
+
+.shade5 {
+    opacity: 0.1;
+}
