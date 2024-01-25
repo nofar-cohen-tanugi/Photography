@@ -3,14 +3,14 @@ import profile from '../assets/images/shimon.jpg';
 
 export const HomePage = () => {
   return (
-    <div className='card pt-8 px-4 flex items-center'>
+    <div className='card pt-8 px-4 flex justify-center items-center'>
       <Image
         src={profile}
         alt='Profile'
         width='400'
         imageClassName='profile-border'
       />
-      <p className='w-3/6 text-white text-x mx-3'>
+      <p className='w-3/6 text-white text-x mx-5'>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt quasi
         quae dicta accusantium exercitationem ad deleniti obcaecati? Voluptatem
         dolores maxime accusantium mollitia, quo laboriosam? Sapiente, ipsum. Ex
