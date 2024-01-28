@@ -29,20 +29,14 @@ export const Header = () => {
     {
       label: t('packages'),
       url: '/packages',
-      className:
-        'font-medium text-lg text-white hover:bg-transparent hover:text-orange-400',
     },
     {
       label: t('gallery'),
       url: '/gallery',
-      className:
-        'font-medium	text-lg text-white hover:bg-transparent hover:text-orange-400',
     },
     {
       label: t('contact'),
       url: '/gallery',
-      className:
-        'font-medium	text-lg text-white hover:bg-transparent hover:text-orange-400',
     },
   ];
 
@@ -51,7 +45,13 @@ export const Header = () => {
       <Menubar
         className='p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
         style={{ padding: '0.1rem 0.5rem 0.1rem 0.5rem' }}
-        model={items}
+        model={items.map((x) => {
+          return {
+            ...x,
+            className:
+              'font-medium	text-lg text-white hover:bg-transparent hover:text-orange-400',
+          };
+        })}
         start={startContent}
         end={endContent}
       />
