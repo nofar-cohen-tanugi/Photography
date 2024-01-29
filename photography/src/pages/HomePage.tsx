@@ -8,7 +8,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     // Define the API endpoint
-    const apiUrl = 'https://localhost4000/summary';
+    const apiUrl = '/api/summary';
 
     // Use Axios to make a GET request
     axios
