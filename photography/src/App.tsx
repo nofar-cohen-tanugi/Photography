@@ -7,6 +7,7 @@ import Tailwind from 'primereact/passthrough/tailwind';
 import './assets/styles/imdex.scss';
 import './assets/styles/flag.scss';
 
+const App = () => {
   return (
     <PrimeReactProvider value={{ unstyled: true, pt: Tailwind }}>
       <div dir='rtl'>
