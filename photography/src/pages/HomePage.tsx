@@ -9,7 +9,7 @@ type BaseResponse<T> = {
 };
 
 export const HomePage = () => {
-  const [data, setData] = useState([{}]);
+  const [, setData] = useState([{}]);
 
   const getSummary = useCallback(async () => {
     // Define the API endpoint
@@ -18,12 +18,11 @@ export const HomePage = () => {
     try {
       const res: BaseResponse<object> = await axios.get(apiUrl);
       setData(res.data);
-      console.log(data);
     } catch (error: unknown) {
       // Handle errors
       console.error('Error fetching data:', error);
     }
-  }, [data]);
+  }, []);
 
   useEffect(() => {
     getSummary();
