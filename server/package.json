@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "type": "commonjs",
   "description": "photograpy",
-  "main": "server.ts",
+  "main": "index.ts",
   "scripts": {
-    "start": "nodemon server.ts"
+    "start": "nodemon index.ts"
   },
   "author": "Nofar Cohen Tanugi",
   "license": "ISC",
