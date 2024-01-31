@@ -1,11 +1,19 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "type": "commonjs",
+  "module": "commonjs",
+  "esModuleInterop": true,
   "description": "photograpy",
-  "main": "server.ts",
+  "main": "index.ts",
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "scripts": {
-    "start": "nodemon server.ts"
+    "start": "nodemon index.ts",
+    "build": "npx tsc"
   },
   "author": "Nofar Cohen Tanugi",
   "license": "ISC",
@@ -20,6 +28,9 @@
     "primereact": "^10.3.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.9",
     "ts-node": "^10.9.2"
