@@ -2,10 +2,10 @@
   "name": "photography-server",
   "version": "1.2.0",
   "description": " photography-server",
-  "main": "api/index.ts",
+  "main": "index.ts",
   "scripts": {
-    "start": "ts-node api/index.ts",
-    "dev": "nodemon api/index.ts",
+    "start": "ts-node index.ts",
+    "dev": "nodemon index.ts",
     "build": "tsc"
   },
   "keywords": [],

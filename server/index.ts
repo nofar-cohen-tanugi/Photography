@@ -19,7 +19,7 @@
 
 import express from "express";
 const app = express();
-const summaryRoute = require('../routes/summaryRoute');
+const summaryRoute = require('./routes/summaryRoute');
 
 
 //app.use('/api/summary', summaryRoute);
