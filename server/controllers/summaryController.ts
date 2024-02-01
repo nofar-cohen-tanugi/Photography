@@ -1,5 +1,5 @@
 
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 //import mongoose from 'mongoose';
 
 // const Summary = new mongoose.Schema({
@@ -9,7 +9,7 @@ import { Request, Response } from 'express';
 
 //const SampleModel = mongoose.model('Sample', Summary);
 
-export const getSummaryData = async (req: Request, res: Response) => {
+export const getSummaryData = async (req: Request, res: Response, next: NextFunction) => {
     try {
         // const data = await SampleModel.find();
         // debugger
@@ -17,6 +17,9 @@ export const getSummaryData = async (req: Request, res: Response) => {
     } catch (error) {
         console.error('Error fetching data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
+    }
+    finally {
+        next();
     }
 };
 
