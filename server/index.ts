@@ -1,25 +1,17 @@
-// import express from 'express';
-// import mongoose from 'mongoose';
-
-// const app = express();
-// const port = 5000;
-
-// // mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-// // const connection = mongoose.connection;
-
-// // connection.once('open', () => {
-// //     console.log('MongoDB database connection established successfully');
-// // });
-// app.use('/api/summary', summaryRoute);
-// app.get("/", (req, res) => { res.send("Express on Vercel"); });
-
-// app.listen(port, () => {
-//     console.log(`Server is running on port: ${port}`);
-// });
 
 import express from "express";
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 const summaryRoute = require('./routes/summaryRoute');
+
+mongoose.connect(process.env.MONGODB_URI as string);
+const connection = mongoose.connection;
+
+connection.once('open', () => {
+    console.log('MongoDB database connection established successfully');
+});
 
 
 app.use('/api/summary', summaryRoute);

@@ -7,11 +7,11 @@ const Summary = new mongoose.Schema({
     description: String,
 });
 
-const SampleModel = mongoose.model('Sample', Summary);
+const SummaryModel = mongoose.model('Summary', Summary);
 
 export const getSummaryData = async (req: Request, res: Response, nest: NextFunction) => {
     try {
-        const data = await SampleModel.find();
+        const data = await SummaryModel.find();
         res.json(data);
     } catch (error) {
         console.error('Error fetching data:', error);
