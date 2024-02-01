@@ -12,7 +12,7 @@
   },
   "include": [
     "./*.js",
-    "api/**/*.ts",
+    "**/*.ts",
     "test/**/*.ts",
     "index.ts",
   ],
