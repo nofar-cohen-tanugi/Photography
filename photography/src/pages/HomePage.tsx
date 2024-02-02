@@ -2,22 +2,27 @@ import { Image } from 'primereact/image';
 import profile from '../assets/images/shimon.jpg';
 import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
+import { DetailsDto } from '@shared/index';
 
 type BaseResponse<T> = {
   data: T[];
   message: string;
 };
 
+const instance = axios.create({
+  baseURL: 'http://localhost:4000/api', // Base URL for your API
+});
+
 export const HomePage = () => {
-  const [, setData] = useState([{}]);
+  const [data, setData] = useState<DetailsDto['summary']>();
 
   const getSummary = useCallback(async () => {
     // Define the API endpoint
-    const apiUrl = '/api/summary';
+    const apiUrl = '/details';
 
     try {
-      const res: BaseResponse<object> = await axios.get(apiUrl);
-      setData(res.data);
+      const res: BaseResponse<DetailsDto> = await instance.get(apiUrl);
+      setData(res.data?.[0].summary);
     } catch (error: unknown) {
       // Handle errors
       console.error('Error fetching data:', error);
@@ -36,7 +41,8 @@ export const HomePage = () => {
         width='400'
         imageClassName='profile-border'
       />
-      <p className='w-3/6 text-white text-x m-5'>{'ffffff'}</p>
+      <h1 className='text-white m-5'>{data?.title}</h1>
+      <p className='w-3/6 text-white text-xl m-5'>{data?.description}</p>
     </div>
   );
 };
