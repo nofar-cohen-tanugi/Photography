@@ -1,8 +1,8 @@
 export class DetailsDto {
 
     summary: {
-        title: String,
-        description: String
+        title: string,
+        description: string
     };
     contact: {
         phoneNumber: string,
