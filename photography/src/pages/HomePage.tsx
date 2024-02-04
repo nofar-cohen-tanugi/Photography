@@ -9,8 +9,10 @@ type BaseResponse<T> = {
   message: string;
 };
 
+const prodUrl = 'https://photography-server-swart.vercel.app';
+
 const instance = axios.create({
-  baseURL: 'https://photography-server-swart.vercel.app/api', // Base URL for your API
+  baseURL: `${prodUrl}/api`, // Base URL for your API
 });
 
 export const HomePage = () => {
