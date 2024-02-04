@@ -15,12 +15,11 @@ connection.once('open', () => {
 });
 
 app.use(cors());
-app.use('/api/details', detailsRoute);
+app.use('/api/details', (req, res) => { res.send("/api/details - vercel"); });
 app.get("/", (req, res) => { res.send("Express on Vercel"); });
 
 const PORT = parseInt(process.env.PORT ?? '80');
-const HOST = '0.0.0.0'; // Listen on all available network interfaces
 
-app.listen(PORT, HOST, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
