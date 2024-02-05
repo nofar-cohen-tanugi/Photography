@@ -17,7 +17,7 @@ export const getDetailsData = async (req: Request, res: Response, next: NextFunc
     try {
         const data = await DetailsModel.find({});
         if (data?.length === 0) {
-            res.status(404).json({ message: 'No details found' });
+            res.json({ message: 'No details found' });
         } else {
             res.json(data);
         }
