@@ -15,7 +15,7 @@ connection.once('open', () => {
 });
 
 app.use(cors());
-app.use('/api/details', (req, res) => { res.send("/api/details - vercel"); });
+app.use('/api/details', detailsRoute);
 app.get("/", (req, res) => { res.send("Express on Vercel"); });
 
 const PORT = parseInt(process.env.PORT ?? '80');
