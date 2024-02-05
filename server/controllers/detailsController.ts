@@ -15,9 +15,8 @@ const DetailsModel = mongoose.model<DetailsDto['summary']>('Details', Details);
 export const getDetailsData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        res.send("Express on Vercel - routes!!!!!!!")
         const data = await DetailsModel.find({ summary: { $exists: true } });;
-        console.log(data);
+        res.send(data);
 
         res.json(data);
         next();
