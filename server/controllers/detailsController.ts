@@ -15,7 +15,7 @@ const DetailsModel = mongoose.model<DetailsDto['summary']>('Details', Details);
 export const getDetailsData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = await DetailsModel.find({ summary: { $exists: true } });;
+        const data = await DetailsModel.find();;
         res.send(data);
 
         res.json(data);
