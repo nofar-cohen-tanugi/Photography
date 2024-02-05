@@ -10,14 +10,14 @@ const Details = new mongoose.Schema({
     }
 });
 
-const DetailsModel = mongoose.model<DetailsDto['summary']>('Details', Details);
+const DetailsModel = mongoose.model('Details', Details);
 
 export const getDetailsData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = await DetailsModel.find({});
+        const data = await DetailsModel.find();
         if (data?.length === 0) {
-            res.json({ message: 'No details found' });
+            res.json({ message: 'No details found 44' });
         } else {
             res.json(data);
         }
