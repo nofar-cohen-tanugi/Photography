@@ -10,10 +10,10 @@ type BaseResponse<T> = {
 };
 
 const prodUrl1 = 'https://photography-server-swart.vercel.app';
-const prodUrl2 = 'http://localhost:80';
+//const prodUrl2 = 'http://localhost:80';
 
 const instance = axios.create({
-  baseURL: `${prodUrl2}/api`, // Base URL for your API
+  baseURL: `${prodUrl1}/api`, // Base URL for your API
 });
 
 export const HomePage = () => {
