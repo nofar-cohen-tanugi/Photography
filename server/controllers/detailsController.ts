@@ -15,10 +15,12 @@ const DetailsModel = mongoose.model<DetailsDto['summary']>('Details', Details);
 export const getDetailsData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = await DetailsModel.find();;
-        res.send(data);
-
-        res.json(data);
+        const data = await DetailsModel.find({});
+        if (data?.length === 0) {
+            res.status(404).json({ message: 'No details found' });
+        } else {
+            res.json(data);
+        }
         next();
     } catch (error) {
         console.error('Error fetching data:', error);
