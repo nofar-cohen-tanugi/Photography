@@ -1,42 +1,29 @@
 import { Image } from 'primereact/image';
 import profile from '../assets/images/shimon.jpg';
-import { useCallback, useEffect, useState } from 'react';
 import axios from 'axios';
-import { DetailsDto } from '@shared/index';
+import { useQuery } from '@tanstack/react-query';
+import { DetailsDto } from '@shared/dtos/DetailsDto';
+import { BaseResponse } from '@shared/dtos/BaseResponse';
 
-type BaseResponse<T> = {
-  data: T[];
-  message: string;
-};
-
-const prodUrl1 = 'https://photography-server-swart.vercel.app';
-//const prodUrl2 = 'http://localhost:80';
+// const prodUrl1 = 'https://photography-server-swart.vercel.app';
+const prodUrl2 = 'http://localhost:80';
 
 const instance = axios.create({
-  baseURL: `${prodUrl1}/api`, // Base URL for your API
+  baseURL: `${prodUrl2}/api`, // Base URL for your API
 });
 
 export const HomePage = () => {
-  const [data, setData] = useState<DetailsDto['summary']>();
-
-  const getSummary = useCallback(async () => {
-    // Define the API endpoint
+  const getSummary = async () => {
     const apiUrl = '/details';
+    return (await instance.get(apiUrl)).data as BaseResponse<DetailsDto>;
+  };
 
-    try {
-      const res: BaseResponse<DetailsDto> = await instance.get(apiUrl);
-      setData(res.data?.[0].summary);
-    } catch (error: unknown) {
-      // Handle errors
-      console.error('Error fetching data:', error);
-    }
-  }, []);
+  const { data, isLoading } = useQuery<BaseResponse<DetailsDto>>({
+    queryKey: ['summary'],
+    queryFn: getSummary,
+  });
 
-  useEffect(() => {
-    getSummary();
-  }, [getSummary]);
-
-  return (
+  return !isLoading ? (
     <div className='card pt-8 px-4 flex justify-center items-center flex-wrap'>
       <Image
         src={profile}
@@ -44,8 +31,18 @@ export const HomePage = () => {
         width='400'
         imageClassName='profile-border'
       />
-      <h1 className='text-white m-5'>{data?.title}</h1>
-      <p className='w-3/6 text-white text-xl m-5'>{data?.description}</p>
+
+      <div className='flex-col'>
+        <h1 className='text-white m-5'>{data?.data?.summary.title}</h1>
+        {data?.data?.summary.description && (
+          <p
+            className='w-3/6 text-white text-xl m-5'
+            dangerouslySetInnerHTML={{
+              __html: data?.data?.summary.description,
+            }}
+          ></p>
+        )}
+      </div>
     </div>
-  );
+  ) : null;
 };
