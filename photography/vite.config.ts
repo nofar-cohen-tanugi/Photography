@@ -25,7 +25,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     lib: {
-      entry: 'src/index.ts', // Specify the entry point for your library
+      entry: 'src/main.tsx', // Specify the entry point for your library
       name: '***YOUR_PROJECT***', // Specify the name of your library (will be available as a global variable)
       fileName: 'index', // Specify the desired file name for the output library file
       formats: ['es', 'umd'], // Specify formats of output library
