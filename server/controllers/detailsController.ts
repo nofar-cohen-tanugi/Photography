@@ -1,7 +1,8 @@
 
 import { NextFunction, Request, Response } from 'express';
 import mongoose from 'mongoose';
-import { DetailsDto } from '@shared/index';
+import { DetailsDto } from '@shared/dtos/DetailsDto';
+import { BaseResponse } from '@shared/dtos/BaseResponse';
 
 const Details = new mongoose.Schema({
     summary: {
@@ -10,13 +11,17 @@ const Details = new mongoose.Schema({
     }
 });
 
-const DetailsModel = mongoose.model<DetailsDto['summary']>('Details', Details);
+const DetailsModel = mongoose.model<DetailsDto>('Details', Details);
 
 export const getDetailsData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = await DetailsModel.find({ "summary": { "$exists": true } });
-        res.json(data);
+        const data = (await DetailsModel.find({ "summary": { "$exists": true } }));
+        const summary: BaseResponse<DetailsDto> = {
+            data: data?.[0] as unknown as DetailsDto,
+            message: "success to get summary"
+        }
+        res.json(summary);
         next();
     } catch (error) {
         console.error('Error fetching data:', error);
