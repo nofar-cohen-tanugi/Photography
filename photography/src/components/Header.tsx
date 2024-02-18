@@ -6,6 +6,7 @@ import { Menubar } from 'primereact/menubar';
 import { MenuItem } from 'primereact/menuitem';
 import { Link } from 'react-router-dom';
 import SelectLanguage from './SelectLanguage';
+import { PrimeIcons } from 'primereact/api';
 
 export const Header = () => {
   const { t } = useTranslation(['header']);
@@ -35,14 +36,17 @@ export const Header = () => {
   const items: MenuItem[] = [
     {
       label: t('packages'),
+      icon: PrimeIcons.QUESTION,
       url: '/packages',
     },
     {
       label: t('gallery'),
+      icon: PrimeIcons.IMAGES,
       url: '/gallery',
     },
     {
       label: t('contact'),
+      icon: PrimeIcons.ENVELOPE,
       url: '/gallery',
     },
   ];
