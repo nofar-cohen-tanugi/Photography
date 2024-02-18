@@ -3,7 +3,7 @@
         background-color: #464646;
     }
 
-    svg {
+    a svg {
         color: white;
 
         &:hover {
@@ -11,3 +11,8 @@
         }
     }
 }
+
+// html[dir=rtl] div [data-pc-section=end] {
+//     margin-left: unset;
+//     margin-right: auto
+// }

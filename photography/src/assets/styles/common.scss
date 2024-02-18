@@ -1,3 +1,24 @@
 #root {
     margin: 0;
+    color: white;
+}
+
+.dropdown {
+    background-color: #464646;
+
+    svg,
+    span {
+        color: white;
+    }
+}
+
+ul {
+    background-color: #464646;
+    color: white;
+
+    li[role=option] {
+        padding: 0.5rem;
+        background-color: #464646;
+        color: white
+    }
 }
