@@ -26,7 +26,6 @@ export default function SelectLanguage() {
   return (
     <div className='card flex justify-content-center w-7'>
       <Dropdown
-        dir='ltr'
         value={selectedLang}
         onChange={(e: DropdownChangeEvent) => {
           changeLanguage(e.value.code);

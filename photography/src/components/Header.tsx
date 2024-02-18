@@ -42,7 +42,7 @@ export const Header = () => {
       url: '/gallery',
     },
     {
-      label: t('contact'),
+      label: 'contact',
       url: '/gallery',
     },
   ];
