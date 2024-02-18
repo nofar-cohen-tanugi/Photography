@@ -1,5 +1,8 @@
 {
     "contact": "צור קשר",
     "gallery": "גלריה",
-    "packages": "חבילות"
+    "packages": "חבילות",
+    "selectLanguage": "שפה",
+    "hebrew": "עברית",
+    "english": "אנגלית"
 }

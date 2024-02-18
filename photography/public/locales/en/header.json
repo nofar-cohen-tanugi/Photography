@@ -1,5 +1,8 @@
 {
     "contact": "Contact",
     "gallery": "Gallery",
-    "packages": "Packages"
+    "packages": "Packages",
+    "selectLanguage": "Language",
+    "hebrew": "Hebrew",
+    "english": "English"
 }

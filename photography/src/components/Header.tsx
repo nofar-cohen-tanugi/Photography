@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Menubar } from 'primereact/menubar';
 import { MenuItem } from 'primereact/menuitem';
 import { Link } from 'react-router-dom';
+import SelectLanguage from './SelectLanguage';
 
 export const Header = () => {
   const { t } = useTranslation(['header']);
@@ -23,7 +24,13 @@ export const Header = () => {
     </React.Fragment>
   );
 
-  const endContent = <React.Fragment></React.Fragment>;
+  const endContent = (
+    <React.Fragment>
+      <div className='flex align-items-center gap-2'>
+        <SelectLanguage />
+      </div>
+    </React.Fragment>
+  );
 
   const items: MenuItem[] = [
     {
@@ -43,6 +50,7 @@ export const Header = () => {
   return (
     <div className='card'>
       <Menubar
+        dir='rtl'
         className='menu-bar p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
         style={{
           padding: '0.1rem 0.5rem 0.1rem 0.5rem',
