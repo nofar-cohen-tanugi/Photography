@@ -3,7 +3,6 @@ import photoLogo from '../assets/images/photoLogo.jpeg';
 import { Image } from 'primereact/image';
 import { useTranslation } from 'react-i18next';
 import { Menubar } from 'primereact/menubar';
-import { MenuItem } from 'primereact/menuitem';
 import { Link } from 'react-router-dom';
 import SelectLanguage from './SelectLanguage';
 import { PrimeIcons } from 'primereact/api';
@@ -33,33 +32,30 @@ export const Header = () => {
     </React.Fragment>
   );
 
-  const items: MenuItem[] = [
-    {
-      label: t('packages'),
-      icon: PrimeIcons.QUESTION,
-      url: '/packages',
-    },
-    {
-      label: t('gallery'),
-      icon: PrimeIcons.IMAGES,
-      url: '/gallery',
-    },
-    {
-      label: t('contact'),
-      icon: PrimeIcons.ENVELOPE,
-      url: '/gallery',
-    },
-  ];
-
   return (
     <div className='card'>
       <Menubar
-        dir='rtl'
         className='menu-bar p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
         style={{
           padding: '0.1rem 0.5rem 0.1rem 0.5rem',
         }}
-        model={items}
+        model={[
+          {
+            label: t('packages'),
+            icon: PrimeIcons.QUESTION,
+            url: '/packages',
+          },
+          {
+            label: t('gallery'),
+            icon: PrimeIcons.IMAGES,
+            url: '/gallery',
+          },
+          {
+            label: t('contact'),
+            icon: PrimeIcons.ENVELOPE,
+            url: '/gallery',
+          },
+        ]}
         // .map((x) => {
         //   return {
         //     ...x,
