@@ -43,13 +43,15 @@ export const Header = () => {
   return (
     <div className='card'>
       <Menubar
-        className='p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
-        style={{ padding: '0.1rem 0.5rem 0.1rem 0.5rem' }}
+        className='menu-bar p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
+        style={{
+          padding: '0.1rem 0.5rem 0.1rem 0.5rem',
+        }}
         model={items.map((x) => {
           return {
             ...x,
             className:
-              'font-medium	text-lg text-white hover:bg-transparent hover:text-orange-400',
+              'font-medium text-lg text-white hover:bg-transparent hover:text-orange-400',
           };
         })}
         start={startContent}

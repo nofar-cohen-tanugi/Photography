@@ -5,11 +5,11 @@ import { useQuery } from '@tanstack/react-query';
 import { DetailsDto } from '@shared/dtos/DetailsDto';
 import { BaseResponse } from '@shared/dtos/BaseResponse';
 
-// const prodUrl1 = 'https://photography-server-swart.vercel.app';
-const prodUrl2 = 'http://localhost:80';
+const prodUrl1 = 'https://photography-server-swart.vercel.app';
+// const prodUrl2 = 'http://localhost:80';
 
 const instance = axios.create({
-  baseURL: `${prodUrl2}/api`, // Base URL for your API
+  baseURL: `${prodUrl1}/api`, // Base URL for your API
 });
 
 export const HomePage = () => {
@@ -24,19 +24,20 @@ export const HomePage = () => {
   });
 
   return !isLoading ? (
-    <div className='card pt-8 px-4 flex justify-center items-center flex-wrap'>
+    <div className='card pt-8 px-7 flex items-center flex-col gap-3 sm:flex-row sm:justify-content'>
       <Image
         src={profile}
         alt='Profile'
-        width='400'
-        imageClassName='profile-border'
+        width='90%'
+        style={{ display: 'flex', justifyContent: 'center' }}
+        imageClassName='profile-border flex justify-content'
       />
 
-      <div className='flex-col'>
-        <h1 className='text-white m-5'>{data?.data?.summary.title}</h1>
+      <div className='flex-col w-full gap-2'>
+        <h1 className='text-white'>{data?.data?.summary.title}</h1>
         {data?.data?.summary.description && (
           <p
-            className='w-3/6 text-white text-xl m-5'
+            className='text-white'
             dangerouslySetInnerHTML={{
               __html: data?.data?.summary.description,
             }}

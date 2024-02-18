@@ -1,0 +1,13 @@
+.menu-bar {
+    a[aria-expanded=true] ul {
+        background-color: #464646;
+    }
+
+    svg {
+        color: white;
+
+        &:hover {
+            color: #464646;
+        }
+    }
+}
