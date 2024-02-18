@@ -42,7 +42,7 @@ export const Header = () => {
       url: '/gallery',
     },
     {
-      label: 'contact',
+      label: t('contact'),
       url: '/gallery',
     },
   ];
@@ -55,13 +55,14 @@ export const Header = () => {
         style={{
           padding: '0.1rem 0.5rem 0.1rem 0.5rem',
         }}
-        model={items.map((x) => {
-          return {
-            ...x,
-            className:
-              'font-medium text-lg text-white hover:bg-transparent hover:text-orange-400',
-          };
-        })}
+        model={items}
+        // .map((x) => {
+        //   return {
+        //     ...x,
+        //     className:
+        //       'font-medium text-lg text-white hover:bg-transparent hover:text-orange-400',
+        //   };
+        // })}
         start={startContent}
         end={endContent}
       />
