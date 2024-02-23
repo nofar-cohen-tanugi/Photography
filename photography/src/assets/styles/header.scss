@@ -3,16 +3,23 @@
         background-color: #464646;
     }
 
-    a svg {
-        color: white;
-
+    a {
         &:hover {
-            color: #464646;
+            background-color: transparent;
         }
     }
 }
 
-// html[dir=rtl] div [data-pc-section=end] {
-//     margin-left: unset;
-//     margin-right: auto
-// }
+div [data-pc-section=end] {
+    position: absolute;
+    left: unset;
+    right: 1rem;
+    direction: rtl;
+}
+
+html[dir=rtl] div [data-pc-section=end] {
+    position: absolute;
+    right: unset;
+    left: 1rem;
+    direction: ltr;
+}

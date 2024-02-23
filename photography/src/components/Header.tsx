@@ -54,7 +54,12 @@ export const Header = () => {
         style={{
           padding: '0.1rem 0.5rem 0.1rem 0.5rem',
         }}
-        model={items}
+        model={items.map((item) => {
+          return {
+            ...item,
+            className: 'hover:text-orange bg-transparent',
+          };
+        })}
         start={startContent}
         end={endContent}
       />
