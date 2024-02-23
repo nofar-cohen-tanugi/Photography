@@ -1,15 +1,16 @@
 // import React from 'react';
 // import photoLogo from '../assets/images/photoLogo.jpeg';
 // import { Image } from 'primereact/image';
-// import { useTranslation } from 'react-i18next';
-import { Menubar } from 'primereact/menubar';
-// import { MenuItem } from 'primereact/menuitem';
+import { useTranslation } from 'react-i18next';
+// import { Menubar } from 'primereact/menubar';
+import { MenuItem } from 'primereact/menuitem';
 // import { Link } from 'react-router-dom';
 // import SelectLanguage from './SelectLanguage';
 import { PrimeIcons } from 'primereact/api';
+import { MegaMenu } from 'primereact/megamenu';
 
 export const Header = () => {
-  // const { t } = useTranslation(['header']);
+  const { t } = useTranslation(['header']);
 
   // const startContent = (
   //   <React.Fragment>
@@ -33,27 +34,29 @@ export const Header = () => {
   //   </React.Fragment>
   // );
 
-  // const items: MenuItem[] = [
-  //   {
-  //     label: t('packages'),
-  //     icon: PrimeIcons.QUESTION,
-  //     url: '/packages',
-  //   },
-  //   {
-  //     label: t('gallery'),
-  //     icon: PrimeIcons.IMAGES,
-  //     url: '/gallery',
-  //   },
-  //   {
-  //     label: t('contact'),
-  //     icon: PrimeIcons.ENVELOPE,
-  //     url: '/gallery',
-  //   },
-  // ];
+  const items: MenuItem[] = [
+    {
+      label: t('packages'),
+      icon: PrimeIcons.QUESTION,
+      url: '/packages',
+    },
+    {
+      label: t('gallery'),
+      icon: PrimeIcons.IMAGES,
+      url: '/gallery',
+    },
+    {
+      label: t('contact'),
+      icon: PrimeIcons.ENVELOPE,
+      url: '/gallery',
+    },
+  ];
 
   return (
     <div className='card'>
-      <Menubar
+      <MegaMenu model={items} breakpoint='960px' />
+
+      {/* <Menubar
         // className='menu-bar p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
         // style={{
         //   padding: '0.1rem 0.5rem 0.1rem 0.5rem',
@@ -61,7 +64,7 @@ export const Header = () => {
         model={[{ id: '1', label: 'packages', icon: PrimeIcons.ALIGN_CENTER }]}
         // start={startContent}
         // end={endContent}
-      />
+      /> */}
     </div>
   );
 };
