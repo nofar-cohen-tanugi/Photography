@@ -24,7 +24,7 @@ export default function SelectLanguage() {
   };
 
   return (
-    <div className='card flex justify-content-center w-7'>
+    <div className='card flex justify-content-center w-auto md:w-12'>
       <Dropdown
         value={selectedLang}
         onChange={(e: DropdownChangeEvent) => {
