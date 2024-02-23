@@ -6,11 +6,11 @@ import { BaseResponse } from '@shared/dtos/BaseResponse';
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 
-// const prodUrl1 = 'https://photography-server-swart.vercel.app';
-const prodUrl2 = 'http://localhost:80';
+const prodUrl1 = 'https://photography-server-swart.vercel.app';
+// const prodUrl2 = 'http://localhost:80';
 
 const instance = axios.create({
-  baseURL: `${prodUrl2}/api`, // Base URL for your API
+  baseURL: `${prodUrl1}/api`, // Base URL for your API
 });
 
 export const PackagesPage = () => {
