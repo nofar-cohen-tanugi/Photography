@@ -59,13 +59,7 @@ export const Header = () => {
         style={{
           padding: '0.1rem 0.5rem 0.1rem 0.5rem',
         }}
-        model={items.map((x) => {
-          return {
-            ...x,
-            className:
-              'font-medium text-lg text-white hover:bg-transparent hover:text-orange-400',
-          };
-        })}
+        model={[{ label: 'jfndkjfn', icon: PrimeIcons.ALIGN_CENTER }]}
         start={startContent}
         end={endContent}
       />
