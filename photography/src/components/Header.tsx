@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { MenuItem } from 'primereact/menuitem';
 import { Link } from 'react-router-dom';
 import SelectLanguage from './SelectLanguage';
-import { PrimeIcons } from 'primereact/api';
 import { MegaMenu } from 'primereact/megamenu';
 
 export const Header = () => {
