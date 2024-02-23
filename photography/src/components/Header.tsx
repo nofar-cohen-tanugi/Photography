@@ -1,15 +1,15 @@
 import React from 'react';
 import photoLogo from '../assets/images/photoLogo.jpeg';
 import { Image } from 'primereact/image';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { Menubar } from 'primereact/menubar';
-import { MenuItem } from 'primereact/menuitem';
+// import { MenuItem } from 'primereact/menuitem';
 import { Link } from 'react-router-dom';
 import SelectLanguage from './SelectLanguage';
 import { PrimeIcons } from 'primereact/api';
 
 export const Header = () => {
-  const { t } = useTranslation(['header']);
+  // const { t } = useTranslation(['header']);
 
   const startContent = (
     <React.Fragment>
