@@ -9,6 +9,7 @@ import './assets/styles/imdex.scss';
 import './assets/styles/flag.scss';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import i18n from './i18n';
+import { PackagesPage } from './pages/PackagesPage';
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/about' element={<ContactPage />} />
+          <Route path='/packages' element={<PackagesPage />} />
         </Routes>
       </Router>
     </div>

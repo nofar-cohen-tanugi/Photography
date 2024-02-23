@@ -6,6 +6,7 @@ import cors from "cors";
 dotenv.config();
 const app = express();
 const detailsRoute = require('./routes/detailsRoute');
+const packagesRoute = require('./routes/packagesRoute');
 
 mongoose.connect(process.env.MONGODB_URI as string);
 const connection = mongoose.connection;
@@ -16,7 +17,9 @@ connection.once('open', () => {
 
 app.use(cors());
 app.use('/api/details', detailsRoute);
-app.get("/", (req, res) => { res.send("Express on Vercel"); });
+app.use('/api/packages', packagesRoute);
+
+// app.get("/", (req, res) => { res.send("Express on Vercel"); });
 
 const PORT = parseInt(process.env.PORT ?? '80');
 

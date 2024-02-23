@@ -1,13 +1,7 @@
 .menu-bar {
-    a[aria-expanded=true] ul {
-        background-color: #464646;
-    }
-
-    a {
-        &:hover {
-            background-color: transparent;
-        }
-    }
+    // ul {
+    //     background-color: transparent;
+    // }
 }
 
 div [data-pc-section=end] {
