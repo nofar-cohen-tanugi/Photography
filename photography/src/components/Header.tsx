@@ -33,23 +33,23 @@ export const Header = () => {
     </React.Fragment>
   );
 
-  const items: MenuItem[] = [
-    {
-      label: t('packages'),
-      icon: PrimeIcons.QUESTION,
-      url: '/packages',
-    },
-    {
-      label: t('gallery'),
-      icon: PrimeIcons.IMAGES,
-      url: '/gallery',
-    },
-    {
-      label: t('contact'),
-      icon: PrimeIcons.ENVELOPE,
-      url: '/gallery',
-    },
-  ];
+  // const items: MenuItem[] = [
+  //   {
+  //     label: t('packages'),
+  //     icon: PrimeIcons.QUESTION,
+  //     url: '/packages',
+  //   },
+  //   {
+  //     label: t('gallery'),
+  //     icon: PrimeIcons.IMAGES,
+  //     url: '/gallery',
+  //   },
+  //   {
+  //     label: t('contact'),
+  //     icon: PrimeIcons.ENVELOPE,
+  //     url: '/gallery',
+  //   },
+  // ];
 
   return (
     <div className='card'>
