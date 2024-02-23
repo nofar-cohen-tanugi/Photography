@@ -2,10 +2,10 @@ import React from 'react';
 import photoLogo from '../assets/images/photoLogo.jpeg';
 import { Image } from 'primereact/image';
 import { useTranslation } from 'react-i18next';
-import { Menubar } from 'primereact/menubar';
 import { MenuItem } from 'primereact/menuitem';
 import { Link } from 'react-router-dom';
 import SelectLanguage from './SelectLanguage';
+import { MegaMenu } from 'primereact/megamenu';
 
 export const Header = () => {
   const { t } = useTranslation(['header']);
@@ -49,19 +49,12 @@ export const Header = () => {
 
   return (
     <div className='card'>
-      <Menubar
-        dir='rtl'
+      <MegaMenu
         className='menu-bar p-0 border-0 border-b-2 border-stone-100 bg-transparent flex items-center'
         style={{
           padding: '0.1rem 0.5rem 0.1rem 0.5rem',
         }}
-        model={items.map((x) => {
-          return {
-            ...x,
-            className:
-              'font-medium text-lg text-white hover:bg-transparent hover:text-orange-400',
-          };
-        })}
+        model={items}
         start={startContent}
         end={endContent}
       />
