@@ -1,7 +1,7 @@
 .menu-bar {
-    // ul {
-    //     background-color: transparent;
-    // }
+    ul+a[aria-expanded=false] {
+        background-color: transparent;
+    }
 }
 
 div [data-pc-section=end] {

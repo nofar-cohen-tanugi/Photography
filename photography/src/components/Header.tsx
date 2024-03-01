@@ -57,7 +57,7 @@ export const Header = () => {
         model={items.map((item) => {
           return {
             ...item,
-            className: 'md:bg-blue-50 hover:text-orange',
+            className: 'hover:text-orange',
           };
         })}
         start={startContent}

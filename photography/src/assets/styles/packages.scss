@@ -1,0 +1,32 @@
+.tab-menu {
+    a {
+        padding: 0.4rem 1.5rem;
+
+    }
+
+    ul {
+        border: 0;
+        height: 3rem;
+        background-color: transparent;
+         li:last-child {
+            display: none;
+        }
+        a {
+            border: 0;
+
+            span {
+                &:hover {
+                    color: orange;
+                }
+            }
+        }
+
+        li[data-p-highlight=true] {
+            color: orange;
+        }
+    }
+}
+
+.focus\:shadow-\[inset_0_0_0_0\.2rem_rgba\(191\2c 219\2c 254\2c 1\)\]:focus {
+    --tw-shadow: none!important;
+}
