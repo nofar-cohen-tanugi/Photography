@@ -1,5 +1,6 @@
 
 export type Language<T> = {
-    "en": T,
-    "he": T
+    type: string,
+    en: T,
+    he: T
 }

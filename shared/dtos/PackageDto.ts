@@ -1,11 +1,12 @@
 type Package = {
-    images: number,
-    hours: number,
-    locations: number,
+    images: string,
+    hours: string,
+    locations: string,
     styling: string,
     extra: string,
-    price: number
+    price: string
 }
+
 
 export class PackageDto {
     title: string;
