@@ -1,16 +1,21 @@
 .tab-menu {
     a {
-        padding: 0.4rem 1.5rem;
-
+        padding: 0.2rem 0.6rem;
+        font-size: 1.3rem;
+        span {
+            text-align: center;
+        }
     }
 
     ul {
         border: 0;
         height: 3rem;
         background-color: transparent;
-         li:last-child {
+
+        li:last-child {
             display: none;
         }
+
         a {
             border: 0;
 
@@ -27,6 +32,40 @@
     }
 }
 
+.package-wrap {
+    p {
+        padding-top: 1.3rem;
+        padding-bottom: 1.3rem;
+    }
+
+    p:not(:first-child):not(:nth-child(2)) {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    p:not(:nth-child(2)) {
+        font-size: 1.5rem;
+    }
+
+    p:first-child {
+        border-radius: 31px;
+        width: fit-content;
+        padding: 0rem 1rem;
+        background: #777777;
+        color: white;
+    }
+}
+
 .focus\:shadow-\[inset_0_0_0_0\.2rem_rgba\(191\2c 219\2c 254\2c 1\)\]:focus {
-    --tw-shadow: none!important;
+    --tw-shadow: none !important;
+}
+
+$maxMobileWidth: 768px;
+
+@media only screen and (max-width: $maxMobileWidth) {
+    .tab-menu {
+        a {
+            font-size: 1.1rem;
+        }
+    }
 }
