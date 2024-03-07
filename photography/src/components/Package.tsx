@@ -1,13 +1,11 @@
 import { Language } from '@shared/dtos/Language';
 import { PackageDto } from '@shared/dtos/PackageDto';
 import { useTranslation } from 'react-i18next';
-import i18n from '../i18n';
 
-export const Package = (props: { packageInfo: Language<PackageDto> }) => {
-  const { packageInfo } = props;
+export const Package = (props: { packageInfo: Language<PackageDto>, lang: 'he' | 'en'}) => {
+  const { packageInfo, lang } = props;
 
-  const lang = i18n.language as 'he' | 'en';
-  const { t } = useTranslation(['packs']);
+  const { t } = useTranslation(['packages']);
 
 
   return (
