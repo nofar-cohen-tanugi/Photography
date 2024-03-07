@@ -4,11 +4,11 @@ export type Category =  'family' | 'mitzva' | 'couple' | 'children';
 export class GalleryDto {
 
     category: Category;
-    url: string;
+    urlId: string;
 
     constructor(galleryDto: GalleryDto) {
        this.category = galleryDto.category;
-       this.url = galleryDto.url
+       this.urlId = galleryDto.urlId
     }
 
 }

@@ -6,7 +6,7 @@ import { BaseResponse } from '@shared/dtos/BaseResponse';
 
 const Gallery = new mongoose.Schema({
     category: String,
-    url: String
+    urlId: String
 });
 
 const galleryModel = mongoose.model<GalleryDto>('Gallery', Gallery);
@@ -15,9 +15,6 @@ export const getGalleryData = async (req: Request, res: Response, next: NextFunc
 
     try {
         const data = (await galleryModel.find());
-        console.log('====================================');
-        console.log(data);
-        console.log('====================================');
         const gallery: BaseResponse<GalleryDto[]> = {
             data: data,
             message: "success to get gallery"

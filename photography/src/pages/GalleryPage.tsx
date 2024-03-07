@@ -3,8 +3,10 @@ import { GalleryDto } from '@shared/dtos/GalleryDto';
 import { BaseResponse } from '@shared/dtos/BaseResponse';
 import { axiosInstance } from '../api/axiosInstance';
 import { useQuery } from '@tanstack/react-query';
+import { useTranslation } from 'react-i18next';
 
 export const GalleryPage = () => {
+  const { t } = useTranslation(['gallery', 'header']);
 
   const getGallery = async () => {
     const apiUrl = '/gallery';
@@ -16,16 +18,25 @@ export const GalleryPage = () => {
     queryFn: getGallery,
   });
 
-  console.log('====================================');
-  console.log(data);
-  console.log('====================================');
-
   return (
     <>
+      <h1 className='card flex justify-center mt-4 text-2xl py-2'>
+        {t('header:gallery')}
+      </h1>
       {!isLoading ? (
-        data?.data?.map((item) => {
-          return <Image src={item.url} alt='Image' width='250' preview className='border border-blue'/>;
-        })
+        <div className='py-7 px-10 flex flex-wrap'>
+          {data?.data?.map((item) => {
+            return (
+              <Image
+                src={`https://drive.google.com/thumbnail?id=${item.urlId}&sz=w1000`}
+                alt='Image'
+                width='250'
+                preview
+                style={{padding: '0.1rem'}}
+              />
+            );
+          })}
+        </div>
       ) : (
         <p>Loading...</p>
       )}

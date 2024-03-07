@@ -14,7 +14,7 @@ type PackageTab = 'family' | 'mitzva' | 'couple' | 'children';
 type PackageResponse = BaseResponse<Language<PackageDto>[]>;
 
 export const PackagesPage = () => {
-  const { t } = useTranslation(['packages', 'photographyType']);
+  const { t } = useTranslation(['packages', 'photographyType', 'header']);
   const [tab, setTab] = useState<PackageTab>('family');
   const lang = i18n.language as 'he' | 'en';
 
@@ -35,12 +35,10 @@ export const PackagesPage = () => {
     { label: t('photographyType:children'), command: () => setTab('children') },
   ];
 
-  console.log(data?.data);
-
   return (
     <>
       <h1 className='card flex justify-center mt-4 text-2xl py-2'>
-        {t('packages')}
+        {t('header:packages')}
       </h1>
       <div className='card flex justify-center tab-menu py-4 h-auto'>
         <TabMenu model={items} />
