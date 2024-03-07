@@ -14,7 +14,13 @@ const galleryModel = mongoose.model<GalleryDto>('Gallery', Gallery);
 export const getGalleryData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = (await galleryModel.find());
+        const data = (await galleryModel.aggregate([{
+            $group: {
+                _id: "$category",
+                objects: { $push: "$$ROOT" },
+                count: { $sum: 1 }
+            }
+        }]));
         const gallery: BaseResponse<GalleryDto[]> = {
             data: data,
             message: "success to get gallery"

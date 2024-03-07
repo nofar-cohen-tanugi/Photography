@@ -1,14 +1,19 @@
 
-export type Category =  'family' | 'mitzva' | 'couple' | 'children';
+export type Category = 'family' | 'mitzva' | 'couple' | 'children';
 
 export class GalleryDto {
 
-    category: Category;
-    urlId: string;
+    objects: {
+        urlId: string,
+        category: Category
+    }[];
+    count: number;
+
+
 
     constructor(galleryDto: GalleryDto) {
-       this.category = galleryDto.category;
-       this.urlId = galleryDto.urlId
+        this.objects = JSON.parse(JSON.stringify(galleryDto.objects));;
+        this.count = galleryDto.count
     }
 
 }
