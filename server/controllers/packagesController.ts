@@ -6,9 +6,16 @@ import { BaseResponse } from '@shared/dtos/BaseResponse';
 
 const Packages = new mongoose.Schema({
     type: String,
-    basic: Object,
-    premium: Object,
-    vip: Object,
+    en: {
+        basic: Object,
+        premium: Object,
+        vip: Object
+    },
+    he: {
+        basic: Object,
+        premium: Object,
+        vip: Object
+    }
 });
 
 const packagesModel = mongoose.model<PackageDto>('Packages', Packages);

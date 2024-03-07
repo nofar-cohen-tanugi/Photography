@@ -7,6 +7,7 @@ dotenv.config();
 const app = express();
 const detailsRoute = require('./routes/detailsRoute');
 const packagesRoute = require('./routes/packagesRoute');
+const galleryRoute = require('./routes/GalleryRoute');
 
 mongoose.connect(process.env.MONGODB_URI as string);
 const connection = mongoose.connection;
@@ -18,6 +19,7 @@ connection.once('open', () => {
 app.use(cors());
 app.use('/api/details', detailsRoute);
 app.use('/api/packages', packagesRoute);
+app.use('/api/gallery', galleryRoute);
 
 // app.get("/", (req, res) => { res.send("Express on Vercel"); });
 

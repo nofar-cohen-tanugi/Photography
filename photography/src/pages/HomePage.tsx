@@ -1,21 +1,14 @@
 import { Image } from 'primereact/image';
 import profile from '../assets/images/shimon.jpg';
-import axios from 'axios';
 import { useQuery } from '@tanstack/react-query';
 import { DetailsDto } from '@shared/dtos/DetailsDto';
 import { BaseResponse } from '@shared/dtos/BaseResponse';
-
-const prodUrl1 = 'https://photography-server-swart.vercel.app';
-// const prodUrl2 = 'http://localhost:80';
-
-const instance = axios.create({
-  baseURL: `${prodUrl1}/api`, // Base URL for your API
-});
+import { axiosInstance } from '../api/axiosInstance';
 
 export const HomePage = () => {
   const getSummary = async () => {
     const apiUrl = '/details';
-    return (await instance.get(apiUrl)).data as BaseResponse<DetailsDto>;
+    return (await axiosInstance.get(apiUrl)).data as BaseResponse<DetailsDto>;
   };
 
   const { data, isLoading } = useQuery<BaseResponse<DetailsDto>>({
