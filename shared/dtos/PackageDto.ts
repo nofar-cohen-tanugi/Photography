@@ -15,7 +15,12 @@ export class PackageDto {
     vip: Package;
 
     constructor(packageDto: PackageDto) {
-        const mCopy = JSON.parse(JSON.stringify(packageDto));
-        Object.assign(this, mCopy);
+        this.title = packageDto.title;
+        this.basic = packageDto.basic;
+        this.premium = packageDto.premium;
+        this.vip = packageDto.vip;
+
+        // const mCopy = JSON.parse(JSON.stringify(packageDto));
+        // Object.assign(this, mCopy);
     }
 }
