@@ -13,7 +13,7 @@ export class GalleryDto {
 
     constructor(galleryDto: GalleryDto) {
         this.objects = galleryDto.objects;
-        this.count = galleryDto.count
+        this.count = galleryDto.count;
     }
 
 }
