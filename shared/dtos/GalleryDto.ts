@@ -12,7 +12,7 @@ export class GalleryDto {
 
 
     constructor(galleryDto: GalleryDto) {
-        this.objects = JSON.parse(JSON.stringify(galleryDto.objects));;
+        this.objects = galleryDto.objects;
         this.count = galleryDto.count
     }
 
