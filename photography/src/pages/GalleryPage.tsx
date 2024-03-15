@@ -32,7 +32,7 @@ export const GalleryPage = () => {
                   {t(`photographyType:${cat.objects[0].category}`)}
                 </p>
                 <div className='flex flex-wrap justify-center items-center'>
-                  {cat.objects.map((item) => {
+                  {cat.objects.map((item, index) => {
                     return (
                       <Image
                         src={`https://drive.google.com/thumbnail?id=${item.urlId}&sz=w1000`}
@@ -40,6 +40,7 @@ export const GalleryPage = () => {
                         width='250'
                         preview
                         style={{ padding: '0.1rem' }}
+                        key={index}
                       />
                     );
                   })}
