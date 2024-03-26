@@ -1,7 +1,8 @@
+import { BaseDto } from "./BaseDto";
 
 export type Category = 'family' | 'mitzva' | 'couple' | 'children';
 
-export class GalleryDto {
+export class GalleryDto extends BaseDto {
 
     objects: {
         urlId: string,
@@ -12,6 +13,7 @@ export class GalleryDto {
 
 
     constructor(galleryDto: GalleryDto) {
+        super(galleryDto._id)
         this.objects = galleryDto.objects;
         this.count = galleryDto.count;
     }
