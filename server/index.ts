@@ -21,7 +21,7 @@ app.use('/api/details', detailsRoute);
 app.use('/api/packages', packagesRoute);
 app.use('/api/gallery', galleryRoute);
 
-// app.get("/", (req, res) => { res.send("Express on Vercel"); });
+app.get('/', (req, res) => { res.send("Express on Vercel"); });
 
 const PORT = parseInt(process.env.PORT ?? '80');
 
