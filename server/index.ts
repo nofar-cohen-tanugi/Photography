@@ -17,9 +17,9 @@ connection.once('open', () => {
 });
 
 app.use(cors());
-app.use('/api/details', detailsRoute);
-app.use('/api/packages', packagesRoute);
-app.use('/api/gallery', galleryRoute);
+// app.use('/api/details', detailsRoute);
+// app.use('/api/packages', packagesRoute);
+// app.use('/api/gallery', galleryRoute);
 
 app.get('/', (req, res) => { res.send("Express on Vercel"); });
 
