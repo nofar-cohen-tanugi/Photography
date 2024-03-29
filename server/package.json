@@ -5,7 +5,9 @@
   "main": "index.ts",
   "scripts": {
     "start": "nodemon index.ts",
-    "dev": "nodemon index.ts"
+    "dev": "nodemon index.ts",
+    "build": "tsc",
+    "vercel-build": "echo hellp"
   },
   "keywords": [],
   "license": "MIT",
