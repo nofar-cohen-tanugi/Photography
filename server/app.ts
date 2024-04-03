@@ -4,9 +4,9 @@ import dotenv from 'dotenv';
 import cors from "cors";
 dotenv.config();
 const app = express();
-const detailsRoute = require('../../routes/detailsRoute');
-const packagesRoute = require('../../routes/packagesRoute');
-const galleryRoute = require('../../routes/GalleryRoute');
+const detailsRoute = require('./routes/detailsRoute');
+const packagesRoute = require('./routes/packagesRoute');
+const galleryRoute = require('./routes/GalleryRoute');
 
 mongoose.connect(process.env.MONGODB_URI as string);
 const connection = mongoose.connection;
