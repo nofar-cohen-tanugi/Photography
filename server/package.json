@@ -4,8 +4,8 @@
   "description": " photography-server",
   "main": "index.ts",
   "scripts": {
-    "start": "nodemon src/api/index.ts",
-    "dev": "nodemon src/api/index.ts",
+    "start": "nodemon index.ts",
+    "dev": "nodemon index.ts",
     "build": "tsc",
     "vercel-build": "echo hello"
   },

@@ -8,12 +8,12 @@ const detailsRoute = require('../../routes/detailsRoute');
 const packagesRoute = require('../../routes/packagesRoute');
 const galleryRoute = require('../../routes/GalleryRoute');
 
-// mongoose.connect(process.env.MONGODB_URI as string);
-// const connection = mongoose.connection;
+mongoose.connect(process.env.MONGODB_URI as string);
+const connection = mongoose.connection;
 
-// connection.once('open', () => {
-//     console.log('MongoDB database connection established successfully');
-// });
+connection.once('open', () => {
+    console.log('MongoDB database connection established successfully');
+});
 
 app.use(cors());
 app.use('/api/details', detailsRoute);
