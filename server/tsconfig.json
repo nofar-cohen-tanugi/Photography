@@ -16,9 +16,10 @@
     },
   },
   "include": [
+    "src/api/*.ts",
     "./*.js",
     "**/*.ts",
     "test/**/*.ts",
-    "index.ts",
+    "src/api/index.ts",
   ],
 }
