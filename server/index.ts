@@ -6,7 +6,7 @@ dotenv.config();
 const app = express();
 const detailsRoute = require('./routes/detailsRoute');
 const packagesRoute = require('./routes/packagesRoute');
-const galleryRoute = require('./routes/GalleryRoute');
+const galleryRoute = require('./routes/galleryRoute');
 
 mongoose.connect(process.env.MONGODB_URI as string);
 const connection = mongoose.connection;
