@@ -6,7 +6,7 @@ import { BaseResponse } from '@shared/dtos/BaseResponse';
 
 const Gallery = new mongoose.Schema({
     category: String,
-    urlId: String
+    urlIds: []
 });
 
 const galleryModel = mongoose.model<GalleryDto>('Gallery', Gallery);
@@ -14,13 +14,7 @@ const galleryModel = mongoose.model<GalleryDto>('Gallery', Gallery);
 export const getGalleryData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = (await galleryModel.aggregate([{
-            $group: {
-                _id: "$category",
-                objects: { $push: "$$ROOT" },
-                count: { $sum: 1 }
-            }
-        }]));
+        const data = await galleryModel.find();
         const gallery: BaseResponse<GalleryDto[]> = {
             data: data,
             message: "success to get gallery"
