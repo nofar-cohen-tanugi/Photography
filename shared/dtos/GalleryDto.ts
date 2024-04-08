@@ -4,18 +4,13 @@ export type Category = 'family' | 'mitzva' | 'couple' | 'children';
 
 export class GalleryDto extends BaseDto {
 
-    objects: {
-        urlId: string,
-        category: Category
-    }[];
-    count: number;
-
-
+    urlIds: string[];
+    category: Category;
 
     constructor(galleryDto: GalleryDto) {
         super(galleryDto._id)
-        this.objects = galleryDto.objects;
-        this.count = galleryDto.count;
+        this.category = galleryDto.category;
+        this.urlIds = galleryDto.urlIds;
     }
 
 }

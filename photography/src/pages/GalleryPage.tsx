@@ -1,9 +1,9 @@
-import { Image } from 'primereact/image';
 import { GalleryDto } from '@shared/dtos/GalleryDto';
 import { BaseResponse } from '@shared/dtos/BaseResponse';
 import { axiosInstance } from '../api/axiosInstance';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
+import { Images } from '../components/Images';
 
 export const GalleryPage = () => {
   const { t } = useTranslation(['gallery', 'header', 'photographyType']);
@@ -23,34 +23,12 @@ export const GalleryPage = () => {
       <h1 className='card flex justify-center mt-4 text-2xl py-2'>
         {t('header:gallery')}
       </h1>
-      {!isLoading ? (
-        <div className='py-2 px-10 flex-col'>
-          {data?.data?.map((cat, index) => {
-            return (
-              <div key={index} className='py-2 text-center'>
-                <p className='text-xl py-1'>
-                  {t(`photographyType:${cat.objects[0].category}`)}
-                </p>
-                <div className='flex flex-wrap justify-center items-center'>
-                  {cat.objects.map((item, index) => {
-                    return (
-                      <Image
-                        src={`https://drive.google.com/thumbnail?id=${item.urlId}&sz=w1000`}
-                        alt='Image'
-                        width='250'
-                        preview
-                        style={{ padding: '0.1rem' }}
-                        key={index}
-                      />
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
+      {!isLoading && data?.data ? (
+        <div className='py-2 flex flex-col gap-5'>
+         <Images images={data.data}/>
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>...</p>
       )}
     </>
   );

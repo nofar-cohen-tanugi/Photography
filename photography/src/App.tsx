@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
 import { PrimeReactProvider } from 'primereact/api';
 import Tailwind from 'primereact/passthrough/tailwind';
-import './assets/styles/imdex.scss';
+import './assets/styles/index.scss';
 import './assets/styles/flag.scss';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import i18n from './i18n';
