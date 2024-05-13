@@ -24,7 +24,7 @@ export const GalleryPage = () => {
         {t('header:gallery')}
       </h1>
       {!isLoading && data?.data ? (
-        <div className='py-2 flex flex-col gap-5'>
+        <div className='py-2 flex flex-col gap-8'>
          <Images images={data.data}/>
         </div>
       ) : (
