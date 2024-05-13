@@ -17,7 +17,7 @@ export const Images = (props: { images: GalleryDto[] }) => {
     };
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const observers: IntersectionObserver[] = textRefs.current.map((_, index) => {
+    const observers: IntersectionObserver[] = textRefs.current.map(() => {
       return new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -41,7 +41,7 @@ export const Images = (props: { images: GalleryDto[] }) => {
     return () => {
       observers.forEach((observer) => observer.disconnect());
     };
-  }, [visibleTitle]); // Empty dependency array ensures effect runs once after mount
+  }, [visibleTitle]);
 
   return (
     <>
