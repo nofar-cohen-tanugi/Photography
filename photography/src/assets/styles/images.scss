@@ -1,44 +1,4 @@
-// /* Style for the gallery container */
-// .gallery {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
-//     gap: 10px; /* Gap between gallery items */
-//     padding: 20px; /* Padding around the gallery */
-// }
-
-// /* Style for each gallery item (image container) */
-// .gallery-item {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     overflow: hidden;
-//     border-radius: 8px;
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-// }
-
-// /* Style for the images within gallery items */
-// .gallery-item img {
-//     display: block;
-//     max-width: 100%;
-//     height: auto;
-//     transition: transform 0.3s ease;
-// }
-
-// /* Masonry-like layout using nth-child for different item sizes */
-// .gallery-item:nth-child(2n+1) {
-//     grid-row-end: span 2; /* Make every second item double height */
-// }
-
-// .gallery-item:nth-child(3n+2) {
-//     grid-column-end: span 2; /* Make every third item double width */
-// }
-
-// /* Hover effect: Scale up image slightly on hover */
-// .gallery-item img:hover {
-//     transform: scale(1.05);
-// }
-
-.category-title {
+.fade-in-up {
     background-image: radial-gradient(rgba(0, 0, 0, 0.912), rgba(0, 0, 0, 0.388), rgba(0, 0, 0, 0.057), rgba(0, 0, 0, 0));
     opacity: 0;
 
@@ -56,6 +16,20 @@
                 transform: translateY(0%);
                 opacity: 1;
             }
+        }
+    }
+}
+
+.fade-in {
+    animation: 1.5s fadeIn;
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
         }
     }
 }

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export const Images = (props: { images: GalleryDto[] }) => {
-  const { t } = useTranslation(['gallery', 'header', 'photographyType']);
+  const { t } = useTranslation(['gallery', 'header', 'category']);
   const textRefs = useRef<(HTMLParagraphElement | null)[]>([]);
   const [visibleTitle, setVisibleTitle] = useState(false);
 
@@ -48,9 +48,9 @@ export const Images = (props: { images: GalleryDto[] }) => {
           <div className='flex items-center justify-center text-center relative'>
             <p
               ref={(el) => (textRefs.current[catIndex] = el)}
-              className='p-2 text-4xl sm:text-6xl absolute top-[20%] z-10 sm:p-[1rem] category-title'
+              className='p-2 text-4xl sm:text-6xl absolute top-[20%] z-10 sm:p-[1rem] fade-in-up'
             >
-              {t(`photographyType:${cat.category}`)}
+              {t(`category:${cat.category}`)}
             </p>
             <div className='flex flex-wrap justify-center items-center'>
               {cat.urlIds.map((item, itemIndex) => (

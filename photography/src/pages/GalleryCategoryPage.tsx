@@ -1,51 +1,58 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { axiosInstance } from '../api/axiosInstance';
 import { GalleryDto } from '@shared/dtos/GalleryDto';
 import { BaseResponse } from '@shared/dtos/BaseResponse';
-import { Images } from '../components/Images';
 import { useQuery } from '@tanstack/react-query';
+import { Image } from 'primereact/image';
 
 export const GalleryCategoryPage = () => {
-  const { t } = useTranslation(['gallery', 'header', 'photographyType']);
-  const [categoryName, setCategoryName] = useState<string>();
+  const { t } = useTranslation(['category']);
   const { name } = useParams();
 
-  useEffect(() => {
-    if (name) {
-      setCategoryName(name);
-    }
-  }, [name]);
-
   const getGalleryCategory = useCallback(async () => {
-    debugger;
-    if (categoryName) {
-      const apiUrl = `/gallery/${categoryName}`;
+    if (name) {
+      const apiUrl = `/gallery/${name}`;
       return (await axiosInstance.get(apiUrl)).data as BaseResponse<
         GalleryDto[]
       >;
     }
-  }, [categoryName]);
+  }, [name]);
 
   useEffect(() => {
-    if (categoryName) {
-      getGalleryCategory();
+    if(name) {
+    getGalleryCategory();
     }
-  }, [categoryName, getGalleryCategory]);
+  }, [name, getGalleryCategory]);
 
-  const { data, isLoading } = useQuery<BaseResponse<GalleryDto[]>>({
-    queryKey: ['gallery/name'],
+  const { data, isLoading } = useQuery<BaseResponse<GalleryDto[]> | undefined>({
+    queryKey: ['gallery:name'],
     queryFn: getGalleryCategory,
-  });
+  });  
 
   return (
     <>
       {' '}
-      {isLoading && data && (
-        <div className='py-2 flex flex-col gap-8'>
-          <Images images={data} />
+      {data && !isLoading && (
+        <>
+        <h1 className='flex justify-center text-4xl py-6'>{t(data.data?.[0]?.category || '')}</h1>
+        <div className='flex gap-3 justify-center'>
+          {data?.data?.map((item) => (
+            item.urlIds.map((url, index) => 
+            <div className='w-1/2 sm:w-80 flex fade-in' key={index}>
+              <Image
+                src={`https://drive.google.com/thumbnail?id=${url}&sz=w1000`}
+                alt='Image'
+                width='100%'
+                style={{ padding: '0.1rem' }}
+                loading='lazy'        
+              />
+            </div>
+            )
+          ))}
         </div>
+        </>
       )}
     </>
   );

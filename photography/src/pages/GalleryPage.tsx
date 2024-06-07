@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Images } from '../components/Images';
 
 export const GalleryPage = () => {
-  const { t } = useTranslation(['gallery', 'header', 'photographyType']);
+  const { t } = useTranslation(['gallery', 'header', 'category']);
 
   const getGallery = async () => {
     const apiUrl = '/gallery';

@@ -31,7 +31,7 @@ export const getGallriesData = async (req: Request, res: Response, next: NextFun
 export const getGalleryByNameData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const categoryName = req.params.name
+        const categoryName = req.params.name;
         const data = await galleryModel.find({ category: categoryName });
         const gallery: BaseResponse<GalleryDto[]> = {
             data: data,

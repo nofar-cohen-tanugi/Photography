@@ -3,6 +3,6 @@ const router = express.Router();
 import galleryController from '../controllers/galleryController';
 
 router.get('/', galleryController.getGallriesData);
-router.get('/:id', galleryController.getGalleryByNameData);
+router.get('/:name', galleryController.getGalleryByNameData);
 
 module.exports = router;
