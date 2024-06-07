@@ -11,6 +11,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import i18n from './i18n';
 import { PackagesPage } from './pages/PackagesPage';
 import { GalleryPage } from './pages/GalleryPage';
+import { GalleryCategoryPage } from './pages/GalleryCategoryPage';
 
 const queryClient = new QueryClient();
 
@@ -27,8 +28,9 @@ const App: React.FC = () => {
         <Header />
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/about' element={<ContactPage />} />
+          <Route path='/contact' element={<ContactPage />} />
           <Route path='/gallery' element={<GalleryPage />} />
+          <Route path='/gallery/:name' element={<GalleryCategoryPage />} />
           <Route path='/packages' element={<PackagesPage />} />
         </Routes>
       </Router>

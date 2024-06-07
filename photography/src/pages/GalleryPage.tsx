@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Images } from '../components/Images';
 
 export const GalleryPage = () => {
-  const { t } = useTranslation(['gallery', 'header', 'photographyType']);
+  const { t } = useTranslation(['gallery', 'header', 'category']);
 
   const getGallery = async () => {
     const apiUrl = '/gallery';
@@ -24,8 +24,8 @@ export const GalleryPage = () => {
         {t('header:gallery')}
       </h1>
       {!isLoading && data?.data ? (
-        <div className='py-2 flex flex-col gap-8'>
-         <Images images={data.data}/>
+        <div className='py-2 flex flex-col gap-8'>   
+         <Images images={data.data} />
         </div>
       ) : (
         <p>...</p>

@@ -14,7 +14,7 @@ type PackageTab = 'family' | 'mitzva' | 'couple' | 'children';
 type PackageResponse = BaseResponse<Language<PackageDto>[]>;
 
 export const PackagesPage = () => {
-  const { t } = useTranslation(['packages', 'photographyType', 'header']);
+  const { t } = useTranslation(['packages', 'category', 'header']);
   const [tab, setTab] = useState<PackageTab>('family');
   const lang = i18n.language as 'he' | 'en';
 
@@ -29,10 +29,10 @@ export const PackagesPage = () => {
   });
 
   const items: MenuItem[] = [
-    { label: t('photographyType:family'), command: () => setTab('family') },
-    { label: t('photographyType:couple'), command: () => setTab('couple') },
-    { label: t('photographyType:mitzva'), command: () => setTab('mitzva') },
-    { label: t('photographyType:children'), command: () => setTab('children') },
+    { label: t('category:family'), command: () => setTab('family') },
+    { label: t('category:couple'), command: () => setTab('couple') },
+    { label: t('category:mitzva'), command: () => setTab('mitzva') },
+    { label: t('category:children'), command: () => setTab('children') },
   ];
 
   return (

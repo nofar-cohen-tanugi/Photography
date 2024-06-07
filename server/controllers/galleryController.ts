@@ -11,10 +11,10 @@ const Gallery = new mongoose.Schema({
 
 const galleryModel = mongoose.model<GalleryDto>('Gallery', Gallery);
 
-export const getGalleryData = async (req: Request, res: Response, next: NextFunction) => {
+export const getGallriesData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = await galleryModel.find();
+        const data = await galleryModel.find().limit(10);
         const gallery: BaseResponse<GalleryDto[]> = {
             data: data,
             message: "success to get gallery"
@@ -27,4 +27,22 @@ export const getGalleryData = async (req: Request, res: Response, next: NextFunc
     }
 };
 
-export default { getGalleryData };
+
+export const getGalleryByNameData = async (req: Request, res: Response, next: NextFunction) => {
+
+    try {
+        const categoryName = req.params.name;
+        const data = await galleryModel.find({ category: categoryName });
+        const gallery: BaseResponse<GalleryDto[]> = {
+            data: data,
+            message: "success to get gallery"
+        }
+        res.json(gallery);
+        next();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+export default { getGallriesData, getGalleryByNameData };
