@@ -36,11 +36,11 @@ export const GalleryCategoryPage = () => {
       {' '}
       {data && !isLoading && (
         <>
-        <h1 className='flex justify-center text-4xl py-6'>{t(data.data?.[0]?.category || '')}</h1>
-        <div className='flex gap-3 justify-center'>
+        <h1 className='flex justify-center text-2xl py-2 sm:text-4xl sm:py-6'>{t(data.data?.[0]?.category || '')}</h1>
+        <div className='flex justify-center flex-wrap'>
           {data?.data?.map((item) => (
             item.urlIds.map((url, index) => 
-            <div className='w-1/2 sm:w-80 flex fade-in' key={index}>
+            <div className='flex w-full fade-in sm:w-1/3' key={index}>
               <Image
                 src={`https://drive.google.com/thumbnail?id=${url}&sz=w1000`}
                 alt='Image'
