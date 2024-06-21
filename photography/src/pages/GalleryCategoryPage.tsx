@@ -45,8 +45,9 @@ export const GalleryCategoryPage = () => {
                 src={`https://drive.google.com/thumbnail?id=${url}&sz=w1000`}
                 alt='Image'
                 width='100%'
+                height='100%'
                 style={{ padding: '0.1rem' }}
-                loading='lazy'        
+                loading='lazy'      
               />
             </div>
             )

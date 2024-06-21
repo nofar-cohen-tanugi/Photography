@@ -1,6 +1,6 @@
 import { BaseDto } from "./BaseDto";
 
-export type Category = 'family' | 'mitzva' | 'couple' | 'children' | 'brit';
+export type Category = 'family' | 'mitzva' | 'couple' | 'children' | 'circumcision';
 
 export class GalleryDto extends BaseDto {
 

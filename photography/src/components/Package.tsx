@@ -16,7 +16,7 @@ export const Package = (props: { packageInfo: Language<PackageDto>, lang: 'he' |
         <p>{packageInfo[`${lang}`].basic.images}</p>
         <p>{packageInfo[`${lang}`].basic.hours}</p>
         <p>{packageInfo[`${lang}`].basic.locations}</p>
-        <p>{packageInfo[`${lang}`].basic.styling}</p>
+        <p>{packageInfo[`${lang}`].basic.freeText}</p>
       </div>
 
       <div className='w-64 border-2 border-green rounded-lg px-7 py-5'>
@@ -25,7 +25,7 @@ export const Package = (props: { packageInfo: Language<PackageDto>, lang: 'he' |
         <p>{packageInfo[`${lang}`].premium.images}</p>
         <p>{packageInfo[`${lang}`].premium.hours}</p>
         <p>{packageInfo[`${lang}`].premium.locations}</p>
-        <p>{packageInfo[`${lang}`].premium.styling}</p>
+        <p>{packageInfo[`${lang}`].premium.freeText}</p>
       </div>
 
       <div className='w-64 border-2 border-yellow rounded-lg px-7 py-5'>
@@ -34,7 +34,7 @@ export const Package = (props: { packageInfo: Language<PackageDto>, lang: 'he' |
         <p>{packageInfo[`${lang}`].vip.images}</p>
         <p>{packageInfo[`${lang}`].vip.hours}</p>
         <p>{packageInfo[`${lang}`].vip.locations}</p>
-        <p>{packageInfo[`${lang}`].vip.styling}</p>
+        <p>{packageInfo[`${lang}`].vip.freeText}</p>
       </div>
     </>
   );

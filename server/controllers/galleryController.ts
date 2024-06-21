@@ -14,7 +14,7 @@ const galleryModel = mongoose.model<GalleryDto>('Gallery', Gallery);
 export const getGallriesData = async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const data = await galleryModel.find().limit(10);
+        const data = await galleryModel.find().limit(6);
         const gallery: BaseResponse<GalleryDto[]> = {
             data: data,
             message: "success to get gallery"

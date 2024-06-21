@@ -1,10 +1,11 @@
 .fade-in-up {
-    background-image: radial-gradient(rgba(0, 0, 0, 0.912), rgba(0, 0, 0, 0.388), rgba(0, 0, 0, 0.057), rgba(0, 0, 0, 0));
+    background-image: radial-gradient(rgb(47 47 47 / 91%), rgb(0 0 0 / 39%), rgb(8 8 8 / 6%), rgba(0, 0, 0, 0));
     opacity: 0;
 
     &.is-visible {
         opacity: 1;
         animation: 2s fadeInUp;
+        text-shadow: 2px 2px 1px black;
 
         @keyframes fadeInUp {
             0% {
