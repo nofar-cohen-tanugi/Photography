@@ -4,9 +4,8 @@ type Package = {
     images: string,
     hours: string,
     locations: string,
-    styling: string,
-    extra: string,
     price: string
+    freeText: string,
 }
 
 
@@ -23,8 +22,5 @@ export class PackageDto extends BaseDto {
         this.basic = packageDto.basic;
         this.premium = packageDto.premium;
         this.vip = packageDto.vip;
-
-        // const mCopy = JSON.parse(JSON.stringify(packageDto));
-        // Object.assign(this, mCopy);
     }
 }

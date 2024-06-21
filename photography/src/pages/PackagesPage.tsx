@@ -10,12 +10,12 @@ import { Package } from '../components/Package';
 import { axiosInstance } from '../api/axiosInstance';
 import i18n from '../i18n';
 
-type PackageTab = 'family' | 'mitzva' | 'couple' | 'children';
+type PackageTab = 'events' | 'books';
 type PackageResponse = BaseResponse<Language<PackageDto>[]>;
 
 export const PackagesPage = () => {
   const { t } = useTranslation(['packages', 'category', 'header']);
-  const [tab, setTab] = useState<PackageTab>('family');
+  const [tab, setTab] = useState<PackageTab>('events');
   const lang = i18n.language as 'he' | 'en';
 
   const getPackages = async () => {
@@ -29,10 +29,8 @@ export const PackagesPage = () => {
   });
 
   const items: MenuItem[] = [
-    { label: t('category:family'), command: () => setTab('family') },
-    { label: t('category:couple'), command: () => setTab('couple') },
-    { label: t('category:mitzva'), command: () => setTab('mitzva') },
-    { label: t('category:children'), command: () => setTab('children') },
+    { label: t('category:events'), command: () => setTab('events') },
+    { label: t('category:books'), command: () => setTab('books') }
   ];
 
   return (

@@ -28,7 +28,7 @@ export const GalleryPage = () => {
          <Images images={data.data} />
         </div>
       ) : (
-        <p>...</p>
+        <p></p>
       )}
     </>
   );
